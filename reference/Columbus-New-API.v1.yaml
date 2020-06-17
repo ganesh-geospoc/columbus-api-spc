@@ -294,6 +294,97 @@ paths:
         - schema:
             type: string
           in: query
-          name: yeay
+          name: year
+  /data/9:
+    get:
+      summary: Get data for row
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        crop_id:
+                          type:
+                            - 'null'
+                            - integer
+                        planting_area_id:
+                          type: string
+                        trial_id:
+                          type: string
+                        exp_id:
+                          type: string
+                        plot_id:
+                          type: string
+                        material_id:
+                          type: string
+                  total:
+                    type: integer
+                  per_page:
+                    type: string
+                  current_page:
+                    type: integer
+                  geometry_type:
+                    type: string
+              examples:
+                row response:
+                  value:
+                    data:
+                      - crop_id: null
+                        planting_area_id: c3de91a0-7fab-11ea-b8bd-4118b7edf8c2
+                        trial_id: 19SUEGYG2153439
+                        exp_id: '1'
+                        plot_id: '1019'
+                        material_id: 18EG820315
+                    total: 6145
+                    per_page: '1'
+                    current_page: 1
+                    geometry_type: row
+      operationId: get-data-9
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: crop_code
+        - schema:
+            type: string
+          in: query
+          name: research_station_code
+        - schema:
+            type: string
+          in: query
+          name: planting_area_code
+        - schema:
+            type: string
+          in: query
+          name: location_code
+        - schema:
+            type: string
+          in: query
+          name: location_selector
+        - schema:
+            type: string
+          in: query
+          name: experiment_id
+        - schema:
+            type: string
+          in: query
+          name: trial_id
+        - schema:
+            type: string
+          in: query
+          name: material_id
+        - schema:
+            type: string
+          in: query
+          name: year
 components:
   schemas: {}
