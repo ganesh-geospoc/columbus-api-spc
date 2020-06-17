@@ -386,5 +386,80 @@ paths:
             type: string
           in: query
           name: year
+  /data/10:
+    get:
+      summary: Get seed data
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        crop_id:
+                          type:
+                            - integer
+                            - 'null'
+                        seed_geometry:
+                          type: object
+              examples:
+                seed response:
+                  value:
+                    data:
+                      - crop_id: null
+                        seed_geometry:
+                          type: Point
+                          coordinates:
+                            - -95.04731792406912
+                            - 41.37632822206144
+                    total: 155502
+                    per_page: '1'
+                    current_page: 1
+                    geometry_type: seed
+      operationId: get-data-10
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: crop_code
+        - schema:
+            type: string
+          in: query
+          name: research_station_code
+        - schema:
+            type: string
+          in: query
+          name: planting_area_code
+        - schema:
+            type: string
+          in: query
+          name: location_code
+        - schema:
+            type: string
+          in: query
+          name: location_selector
+        - schema:
+            type: string
+          in: query
+          name: experiment_id
+        - schema:
+            type: string
+          in: query
+          name: trial_id
+        - schema:
+            type: string
+          in: query
+          name: material_id
+        - schema:
+            type: string
+          in: query
+          name: year
 components:
   schemas: {}
