@@ -98,6 +98,14 @@ paths:
                           type: string
                         season_description:
                           type: string
+                  total:
+                    type: number
+                  per_page:
+                    type: string
+                  current_page:
+                    type: number
+                  geometry_type:
+                    type: string
               examples:
                 trial example:
                   value:
@@ -153,5 +161,139 @@ paths:
             type: string
           in: query
           name: location_selector
+      description: ''
+  /data/8:
+    get:
+      summary: Get data for plots
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        crop_id:
+                          type: integer
+                        fix_check_flag:
+                          type: boolean
+                        location_selector:
+                          type: string
+                        max_row:
+                          type: string
+                        min_row:
+                          type: string
+                        max_range:
+                          type: string
+                        min_range:
+                          type: string
+                        plot_id:
+                          type: string
+                        plot_geometry:
+                          type: object
+                        plot_area_usage:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              Vertical Coordinate:
+                                type: string
+                              Horizontal Coordinate:
+                                type: string
+                        material_id:
+                          type: string
+                        replicatio_number:
+                          type: string
+                        barcode:
+                          type: string
+                  total:
+                    type: number
+                  per_page:
+                    type: string
+                  current_page:
+                    type: number
+                  geometry_type:
+                    type: string
+              examples:
+                Plot response:
+                  value:
+                    data:
+                      - crop_id: 1
+                        fix_check_flag: 'False'
+                        location_selector: '6418:11-01-2019'
+                        max_row: '188'
+                        min_row: '187'
+                        max_range: '25'
+                        min_range: '25'
+                        plot_id: '1049'
+                        plot_geometry:
+                          type: Polygon
+                          coordinates:
+                            - - - 72.86743084704328
+                                - 21.30278287901389
+                              - - 72.86743084704328
+                                - 21.302843445028426
+                              - - 72.86744553463056
+                                - 21.302843445028426
+                              - - 72.86744553463056
+                                - 21.30278287901389
+                              - - 72.86743084704328
+                                - 21.30278287901389
+                        plot_area_usage:
+                          - Vertical Coordinate: '25'
+                            Horizontal Coordinate: '187'
+                          - Vertical Coordinate: '25'
+                            Horizontal Coordinate: '188'
+                        material_id: 20ALL1117UF_MM
+                        replicatio_number: '1'
+                        barcode: UR238135792
+                    total: 1921999
+                    per_page: '1'
+                    current_page: 1
+                    geometry_type: plot
+      operationId: get-data-8
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: crop_code
+        - schema:
+            type: string
+          in: query
+          name: research_station_code
+        - schema:
+            type: string
+          in: query
+          name: planting_area_code
+        - schema:
+            type: string
+          in: query
+          name: location_code
+        - schema:
+            type: string
+          in: query
+          name: location_selector
+        - schema:
+            type: string
+          in: query
+          name: experiment_id
+        - schema:
+            type: string
+          in: query
+          name: trial_id
+        - schema:
+            type: string
+          in: query
+          name: material_id
+        - schema:
+            type: string
+          in: query
+          name: yeay
 components:
   schemas: {}
