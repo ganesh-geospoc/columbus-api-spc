@@ -461,5 +461,102 @@ paths:
             type: string
           in: query
           name: year
+  /crops:
+    get:
+      summary: Get list of crops
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+              examples:
+                response:
+                  value:
+                    - id: '2'
+                      name: Soybean
+                    - id: '1'
+                      name: Corn
+      operationId: get-crops
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+            examples: {}
+  /geometry-types:
+    get:
+      summary: Get list of geometry types
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+              examples:
+                response:
+                  value:
+                    - id: '1'
+                      name: research_station
+                    - id: '2'
+                      name: location
+                    - id: '3'
+                      name: aoi
+                    - id: '4'
+                      name: trialing_aoi
+                    - id: '5'
+                      name: test_fit_plot
+                    - id: '6'
+                      name: planting_area
+                    - id: '7'
+                      name: trial
+                    - id: '8'
+                      name: plot
+                    - id: '9'
+                      name: row
+                    - id: '10'
+                      name: seed
+                    - id: '11'
+                      name: unplantable_area
+                    - id: '34'
+                      name: trimble_data
+                    - id: '35'
+                      name: multi_polygon
+                    - id: '36'
+                      name: multi_line_string
+                    - id: '37'
+                      name: multi_point
+                    - id: '38'
+                      name: polygon
+                    - id: '39'
+                      name: line_string
+                    - id: '40'
+                      name: point
+                    - id: '41'
+                      name: shapefile
+                    - id: '42'
+                      name: zonal_stats_data
+                    - id: '43'
+                      name: kml
+      operationId: get-geometry-types
 components:
   schemas: {}
