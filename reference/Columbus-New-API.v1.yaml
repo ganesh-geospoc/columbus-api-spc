@@ -1,0 +1,157 @@
+openapi: 3.0.0
+info:
+  title: Columbus New API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /data/7:
+    parameters:
+      - required: true
+      - required: true
+    get:
+      summary: ''
+      operationId: get-data-7-research_station_code-plot_type
+      responses:
+        '200':
+          description: OK
+        '':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        crop_id:
+                          type: integer
+                        parent_id:
+                          type: string
+                        source_id:
+                          type:
+                            - 'null'
+                            - number
+                        season:
+                          type: string
+                        year:
+                          type: number
+                        geom:
+                          type:
+                            - object
+                            - 'null'
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                        status:
+                          type: number
+                        trial_id:
+                          type: string
+                        crop_code:
+                          type: string
+                        crop_name:
+                          type: string
+                        row_width:
+                          type: string
+                        row_length:
+                          type: string
+                        stage_code:
+                          type: string
+                        stage_name:
+                          type: string
+                        season_code:
+                          type: string
+                        country_code:
+                          type: string
+                        country_name:
+                          type: string
+                        trial_number:
+                          type: string
+                        experiment_id:
+                          type: string
+                        location_code:
+                          type: string
+                        location_name:
+                          type: string
+                        planting_date:
+                          type: string
+                        crop_type_code:
+                          type: string
+                        crop_type_name:
+                          type: string
+                        planting_area_id:
+                          type: string
+                        location_latitude:
+                          type: string
+                        location_selector:
+                          type: string
+                        trial_description:
+                          type: string
+                        location_longitude:
+                          type: string
+                        planting_area_code:
+                          type: string
+                        season_description:
+                          type: string
+              examples:
+                trial example:
+                  value:
+                    data:
+                      - id: c7311800-7fab-11ea-9102-133a5d899efb
+                        crop_id: 1
+                        parent_id: c3de91a0-7fab-11ea-b8bd-4118b7edf8c2
+                        source_id: null
+                        season: SUMR
+                        year: 2019
+                        geom: null
+                        created_at: '2020-04-16T01:00:37.000Z'
+                        updated_at: '2020-04-16T01:00:37.000Z'
+                        status: '5'
+                        trial_id: 19SUDWYG2023439
+                        crop_code: CORN
+                        crop_name: Corn
+                        row_width: '76.2000'
+                        row_length: '6.7056'
+                        stage_code: '2'
+                        stage_name: '2'
+                        season_code: SUMR
+                        country_code: US
+                        country_name: United States
+                        trial_number: '202'
+                        experiment_id: 19SUDWYG202
+                        location_code: '3439'
+                        location_name: 'US Winthrop, MN 3439'
+                        planting_date: '2019-05-16T00:00:00Z'
+                        crop_type_code: YG
+                        crop_type_name: Yield Grain trial
+                        planting_area_id: c3de91a0-7fab-11ea-b8bd-4118b7edf8c2
+                        location_latitude: '44.55981800'
+                        location_selector: '3439:11-01-2018'
+                        trial_description: SA Oct._IID3133CF_DH
+                        location_longitude: '-94.35648000'
+                        planting_area_code: 103N
+                        season_description: Summer
+                    total: 39255
+                    per_page: '1'
+                    current_page: 1
+                    geometry_type: trial
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: research_station_code
+        - schema:
+            type: string
+          in: query
+          name: plot_type
+        - schema:
+            type: string
+          in: query
+          name: location_selector
+components:
+  schemas: {}
